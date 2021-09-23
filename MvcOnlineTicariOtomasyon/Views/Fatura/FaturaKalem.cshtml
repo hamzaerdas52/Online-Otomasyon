@@ -1,0 +1,30 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Sınıflar
+@{
+    ViewBag.Title = "FaturaKalem";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2 style="margin: 10px">Fatura Kalemleri</h2>
+
+<table class="table table-bordered" style="margin-top:20px">
+    <tr>
+        <th>Id</th>
+        <th>Açıklama</th>
+        <th>Miktar</th>
+        <th>Birim Fiyat</th>
+        <th>Tutar</th>
+    </tr>
+    @foreach (var fk in Model)
+    {
+        <tr>
+            <td>@fk.FaturaKalemId</td>
+            <td>@fk.Aciklama</td>
+            <td>@fk.Miktar</td>
+            <td>@fk.BirimFiyat</td>
+            <td>@fk.Tutar</td>
+        </tr>
+    }
+</table>
+
+<a href="/Fatura/YeniKalem/" class="btn btn-outline-info">Yeni Kalem Girişi</a>
+

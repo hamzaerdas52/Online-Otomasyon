@@ -1,0 +1,26 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Sınıflar.FaturaKalem
+@{
+    ViewBag.Title = "YeniKalem";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2 style="margin: 10px">Yeni Kalem Ekleme</h2>
+<form class="from-group" method="post">
+    @Html.Label("Açıklama")
+    @Html.DropDownListFor(x => x.Aciklama, (List<SelectListItem>)ViewBag.urun, new { @class = "form-control" })
+    <br />
+    @Html.Label("Miktar")
+    @Html.TextBoxFor(x => x.Miktar, new { @class = "form-control" })
+    <br />
+    @Html.Label("Birim Fiyat")
+    @Html.TextBoxFor(x => x.BirimFiyat, new { @class = "form-control" })
+    <br />
+    @Html.Label("Tutar")
+    @Html.TextBoxFor(x => x.Tutar, new { @class = "form-control" })
+    <br />
+    @Html.Label("FaturaId")
+    @Html.TextBoxFor(x => x.FaturaId, new { @class = "form-control" })
+    <br />
+    <button style="margin-top: 20px" class="btn btn-info">Kaydet</button>
+</form>
+

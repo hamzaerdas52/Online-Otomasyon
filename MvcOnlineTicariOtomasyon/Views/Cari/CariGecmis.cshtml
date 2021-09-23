@@ -1,0 +1,39 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Sınıflar
+@model List<SatisHareket>
+@{
+    ViewBag.Title = "CariGecmis";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2 style="margin: 10px">Cari İşlem Geçmişi</h2>
+
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item">Cari Adı: @ViewBag.cari</li>
+</ol>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Satış Id</th>
+        <th>Ürün</th>
+        <th>Personel</th>
+        <th>Fiyat</th>
+        <th>Adet</th>
+        <th>Toplam Tutar</th>
+        <th>Tarih</th>
+        @*<th>Yazdır</th>*@
+    </tr>
+    @foreach (var sh in Model)
+    {
+        <tr>
+            <td>@sh.SatisId</td>
+            <td>@sh.Urun.UrunAd</td>
+            <td>@sh.Personel.PersonelAd @sh.Personel.PersonelSoyad</td>
+            <td>@sh.Fiyat</td>
+            <td>@sh.Adet</td>
+            <td>@sh.ToplamTutar</td>
+            <td>@sh.Tarih</td>
+            @*<td><a href="#" class="btn btn-default" style="background-color:dodgerblue; color:white; font-size:large">Yazdır</a></td>*@
+        </tr>
+    }
+</table>
+

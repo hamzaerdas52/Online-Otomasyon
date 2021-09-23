@@ -1,0 +1,37 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Sınıflar;
+@model List<Fatura>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2 style="margin: 10px">Fatura Listesi</h2>
+
+<table class="table table-bordered" style="margin-top:20px">
+    <tr>
+        <th>Id</th>
+        <th>Seri No</th>
+        <th>Sıra No</th>
+        <th>Tarih</th>
+        <th>Saat</th>
+        <th>Güncelle</th>
+        <th>Detaylar</th>
+    </tr>
+    @foreach (var f in Model)
+    {
+<tr>
+    <td>@f.FaturaId</td>
+    <td>@f.FaturaSeriNo</td>
+    <td>@f.FaturaSıraNo</td>
+    <td>@f.Tarih</td>
+    <td>@f.Saat</td>
+    <td><a href="/Fatura/FaturaGetir/@f.FaturaId" class="btn btn-outline-success">Güncelle</a></td>
+    <td><a href="/Fatura/FaturaDetay/@f.FaturaId" class="btn btn-outline-secondary">Fatura Detayları</a></td>
+</tr>
+    }
+</table>
+
+<a href="/Fatura/FaturaEkle" class="btn btn-primary">Yeni Fatura Girişi</a>
+
+
+
